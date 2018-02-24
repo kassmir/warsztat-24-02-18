@@ -1,12 +1,14 @@
-*{
+* {
     cursor: url('./hammer.png') 50 50, pointer
 }
 
-body{
+body {
     background-color: green;
+    width: 100vw;
+    height: 100vh;
 }
 
-.mole{
+.mole {
     position: absolute;
     width: 10vh;
     height: 10vh;
@@ -16,7 +18,8 @@ body{
     background-repeat: no-repeat;
 }
 
-.points, .time{
+.points,
+.time {
     position: absolute;
     left: 0;
     top: 0;
@@ -24,7 +27,7 @@ body{
     color: white;
 }
 
-.messages{
+.messages {
     position: absolute;
     left: 50%;
     transform: translate(-50%);

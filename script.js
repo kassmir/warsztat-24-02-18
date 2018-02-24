@@ -49,6 +49,7 @@
             function() {
                 mole.remove()
                 addPoint()
+                flashBackground()
             }
         )
 
@@ -63,14 +64,18 @@
         alert('Game has ended!\nYour score is: ' + points + ' !')
     }
 
-    function init() {
-        points = 0
-        time = 10
-        mole = makeMole()
+    function flashBackground() {
+        var body = document.querySelector('body')
+        body.style.backgroundColor = 'red'
+        setTimeout(
+            function() {
+                body.style.backgroundColor = 'green'
+            },
+            100
+        )
+    }
 
-        displayPoints(points)
-        displayTime(time)
-
+    function startGame() {
         gameIntervalId = setInterval(
             function() {
                 mole.remove()
@@ -79,8 +84,28 @@
             },
             1000
         )
+
     }
 
+    function init() {
+        points = 0
+        time = 10
+        mole = makeMole()
+
+        displayPoints(points)
+        displayTime(time)
+
+        document.querySelector('.start-modal button')
+            .addEventListener(
+                'click',
+                function() {
+                    document.querySelector('.start-modal')
+                        .style.display = 'none'
+                    startGame()
+                }
+            )
+
+    }
 
     init()
 

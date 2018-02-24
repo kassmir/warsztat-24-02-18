@@ -1,28 +1,8 @@
-function hello() {
-    console.log('Hello!')
-    console.log('Hello!')
-    console.log('Hello!')
-
+function hello(name, numberOfLogs) { //parameter is a name for attribute 
+    for (var i = 0; i < numberOfLogs; i++) {
+        console.log('Hello ' + name + '!')
+    }
 }
-hello()
-
-
-function hello(name) { //parameter is a name for attribute 
-    console.log('Hello ' + name + '!')
-    console.log('Hello ' + name + '!')
-    console.log('Hello ' + name + '!')
-
-}
-hello('Kasia')
-hello('Leszek')
-hello('Darek')
-
-
-/*Funkcje warte zapoznania:
-forEach 
-map
-filter
-reduce
-
-kanał na youtube do funkcji i JS: fun fun function (blok: functional programming)
-*/
+hello('Kasia', 1)
+hello('Leszek', 2)
+hello('Darek', 3)

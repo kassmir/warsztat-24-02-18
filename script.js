@@ -76,6 +76,7 @@
     }
 
     function startGame() {
+        mole = makeMole()
         gameIntervalId = setInterval(
             function() {
                 mole.remove()
@@ -90,7 +91,7 @@
     function init() {
         points = 0
         time = 10
-        mole = makeMole()
+        mole = null
 
         displayPoints(points)
         displayTime(time)

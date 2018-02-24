@@ -2,11 +2,20 @@
     var points
     var time
     var mole
+    var gameIntervalId
 
     function addPoint() {
         points++
-        console.log('Dodano punkt!', points)
         displayPoints(points)
+    }
+
+    function reduceTime() {
+        time--
+        displayTime(time)
+
+        if (time === 0) {
+            endGame()
+        }
     }
 
     function displayPoints(pointsParam) {
@@ -48,6 +57,12 @@
         return mole
     }
 
+    function endGame() {
+        clearInterval(gameIntervalId)
+        mole.remove()
+        alert('Game has ended!\nYour score is: ' + points + ' !')
+    }
+
     function init() {
         points = 0
         time = 10
@@ -55,6 +70,15 @@
 
         displayPoints(points)
         displayTime(time)
+
+        gameIntervalId = setInterval(
+            function() {
+                mole.remove()
+                mole = makeMole()
+                reduceTime()
+            },
+            1000
+        )
     }
 
 

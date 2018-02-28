@@ -3,7 +3,7 @@
 }
 
 body {
-    background-color: green;
+    background-color: grey;
     width: 100vw;
     height: 100vh;
     font-family: sans-serif;
@@ -48,7 +48,7 @@ body {
 }
 
 .modal button {
-    background-color: rgb(246, 250, 9);
+    background-color: rgb(250, 9, 9);
     color: white;
     border: none;
     padding: 10px;

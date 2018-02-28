@@ -49,7 +49,7 @@
             function() {
                 mole.remove()
                 addPoint()
-                flashBackground()
+
             }
         )
 
@@ -57,6 +57,7 @@
 
         return mole
     }
+
 
     function endGame() {
         clearInterval(gameIntervalId)
@@ -94,21 +95,25 @@
 
     function startGame() {
         mole = makeMole()
+
         gameIntervalId = setInterval(
             function() {
                 mole.remove()
+
                 mole = makeMole()
+
                 reduceTime()
             },
-            1000
+            800
         )
 
     }
 
     function init() {
         points = 0
-        time = 10
+        time = 20
         mole = null
+
 
         displayPoints(points)
         displayTime(time)
